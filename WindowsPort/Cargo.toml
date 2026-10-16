@@ -1,0 +1,25 @@
+[package]
+name = "sequel-ace-windows"
+version = "0.1.0"
+edition = "2024"
+description = "Incremental Windows port of Sequel Ace"
+
+[dependencies]
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+eframe = { version = "0.35.0", default-features = false, features = ["default_fonts", "glow", "accesskit"] }
+# Driver = libmysqlclient (library C yang sama dengan macOS app), bukan
+# implementasi ulang protokol. Butuh libmysqlclient terpasang; lihat README.md.
+mysqlclient-sys = "0.5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4"] }
+dirs = "5"
+rfd = "0.14"
+keyring = "3"
+
+[[bin]]
+name = "sequel-ace-askpass"
+path = "src/bin/sequel-ace-askpass.rs"
+
+[profile.release]
+strip = true
