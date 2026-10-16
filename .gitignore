@@ -1,3 +1,2 @@
-WindowsPort/target/
-WindowsPort/dist/
-.commandcode/
+/target/
+/dist/
